@@ -1,0 +1,17 @@
+version: '2'
+services:
+  php:
+    build: ./bin/docker_containers/php
+    volumes:
+      - ./apache2.conf:/etc/apache2/apache2.conf
+      - ./homepage:/var/www/html
+    depends_on:
+      - mysql
+    ports:
+      - "25252:80" # RandomNumber
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+    volumes:
+     - /sessions
