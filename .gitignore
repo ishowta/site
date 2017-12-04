@@ -1,3 +1,7 @@
 /nodejs/node_modules/
+/nodejs/.bash_history
 /nodejs/.forever
 /php/log.txt
+/php/test.php
+user_config.ini
+.forever

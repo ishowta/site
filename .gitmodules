@@ -1,0 +1,6 @@
+[submodule "ura/lib/PHPMailer"]
+	path = ura/lib/PHPMailer
+	url = https://github.com/PHPMailer/PHPMailer.git
+[submodule "ura/login/javascript/jsSHA"]
+	path = ura/login/javascript/jsSHA
+	url = https://github.com/Caligatio/jsSHA.git

@@ -1,0 +1,293 @@
+/**
+ * Referred to http://codepen.io/clintioo/pen/FKymj
+ * HTML5 Form Validation
+
+ *  The MIT License
+
+ *  Copyright (c) Client Brown
+
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+
+ *  The above copyright notice and this permission notice shall be included in
+ *  all copies or substantial portions of the Software.
+
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *  THE SOFTWARE.
+ */
+
+@import url(weloveiconfonts/weloveiconfonts.css?family=entypo);
+body {
+  overflow: hidden;
+  background-image: url(../image/background_sky.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+.ovbody{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+@font-face{
+  font-family: 'scriptin';
+  src: url(../font/SCRIPTIN.ttf);
+}
+
+.title{
+  font-family: 'scriptin';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  padding: 16px 16px 8px 16px;
+  border: 0;
+  margin: auto;
+  font-size: 100px;
+  margin-top: -320px;
+  margin-left: -150px;
+}
+
+[data-icon]:after {
+  font-family: "entypo";
+  content: attr(data-icon);
+  speak: none;
+}
+
+.hide-text, label, button {
+  display: block;
+  text-indent: 150%;
+  overflow: hidden;
+}
+.hide-text:before, label:before, button:before, .hide-text:after, label:after, button:after {
+  text-indent: 0;
+}
+
+form {
+  margin: 20px 0 0 0;
+}
+
+fieldset {
+  z-index: 5;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  padding: 16px 16px 8px 16px;
+  border: 0;
+  margin: auto;
+  margin-top: -54px;
+  margin-left: -119px;
+}
+
+label[data-icon]:after,
+button[data-icon]:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+}
+
+label {
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px 0 0 3px;
+  position: absolute;
+  margin-top: -42px;
+  width: 32px;
+  height: 32px;
+  background: #dedede;
+  border-right: 1px solid #cecece;
+  cursor: pointer;
+}
+label[data-icon]:after {
+  color: #847384;
+}
+label[for="username"][data-icon]:after {
+  margin: -9.14286px 0 0 -7.11111px;
+}
+label[for="password"][data-icon]:after {
+  margin: -9.14286px 0 0 -4.92308px;
+}
+label[for="email"][data-icon]:after {
+  margin: -9.14286px 0 0 -5.92308px;
+}
+label[for="repassword"][data-icon]:after {
+  margin: -9.14286px 0 0 -4.32308px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  /*@include input-placeholder {
+    color: $form-input-text-placeholder-color;
+  }*/
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 3px 3px 0;
+  height: 32px;
+  width: 166px;
+  border: 0;
+  margin: 0 0 10px 32px;
+  padding: 0 0 0 8px;
+  font: 14px "Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif";
+}
+input[type="email"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+  color: #848484;
+}
+input[type="email"]::-moz-input-placeholder,
+input[type="text"]::-moz-input-placeholder,
+input[type="password"]::-moz-input-placeholder {
+  color: #848484;
+}
+input[type="email"]:-ms-input-placeholder,
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder {
+  color: #848484;
+}
+input[type="email"] + label + span,
+input[type="text"] + label + span,
+input[type="password"] + label + span {
+  display: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 0 0 transparent;
+  -webkit-box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
+  position: absolute;
+  left: 234px;
+  margin-top: -42px;
+  padding: 0 10px;
+  height: 32px;
+  color: #ffffff;
+  background: #e62163;
+  border: 0;
+  font: 14px Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+  line-height: 32px;
+  white-space: nowrap;
+}
+input[type="email"] + label + span:before,
+input[type="text"] + label + span:before,
+input[type="password"] + label + span:before {
+  width: 0;
+  height: 0;
+  left: -8px;
+  top: 12px;
+  content: '';
+  position: absolute;
+  border-top: 4px solid transparent;
+  border-right: 8px solid #e62163;
+  border-bottom: 4px solid transparent;
+}
+input[type="email"]:invalid,
+input[type="text"]:invalid,
+input[type="password"]:invalid {
+  display: block;
+  box-shadow: none;
+  outline: none;
+}
+input[type="email"].blur:required:invalid + label,
+input[type="text"].blur:required:invalid + label,
+input[type="password"].blur:required:invalid + label {
+  background: #e62163;
+  border-right-color: #ffffff;
+}
+input[type="email"].blur:required:invalid + label:after,
+input[type="text"].blur:required:invalid + label:after,
+input[type="password"].blur:required:invalid + label:after {
+  margin: -9.14286px 0 0 -8px;
+  content: '\26A0';
+  color: #ffffff;
+}
+
+button {
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 3px 3px 0;
+  position: absolute;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  margin-top: -42px;
+  color: #ffffff;
+  background: #2B9AEC;
+  border: 0;
+}
+button[data-icon]:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -9.14286px 0 0 -6.4px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+#signup_button{
+  border-radius: 3px 3px 3px 3px;
+  background-color: #ffffff;
+  color: #333333;
+  z-index: 6;
+  position: fixed;
+  width: 100px;
+  left: 50%;
+  top: 50%;
+  margin-top: 50px;
+  margin-left: -50px;
+}
+
+@media screen and (max-width: 480px) {
+  /* for smartphone */
+  #signup_button{
+    position: absolute;
+    margin-top: 65px;
+    margin-left: -50px;
+  }
+  button {
+    position: absolute;
+    right: -16px;
+  }
+}
+
+/**
+ *
+ */
+
+#waterroad {
+  z-index: 4;
+  width: 1920px;
+  height: 480px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  margin-left: -960px;
+}
+
+.gif-world-wrapper{
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

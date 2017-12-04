@@ -1,0 +1,11 @@
+<Files ~ "\.ini$">
+	deny from all
+</Files>
+
+<Files ~ "readme\.md$">
+	deny from all
+</Files>
+
+<Files ~ "log.txt$">
+	deny from all
+</Files>

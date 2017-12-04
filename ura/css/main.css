@@ -1,0 +1,251 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+/**
+ * Header design
+ */
+
+div.header {
+	background-image: url('../img/header_texture.jpg');
+	height: 35px;
+	margin-bottom: 15px
+}
+
+.header_title {
+	text-align: center;
+}
+
+.header_title a {
+	font-size: 34px;
+	color: #c1c1c1;
+	text-decoration: none;
+}
+
+#logout_button {
+	float: right;
+	background-color: dimgray;
+}
+
+/**
+ * Body design
+ */
+
+div.body {
+
+}
+
+/**
+ * Footer design
+ */
+
+div.footer {
+	background-image: url('../img/footer_texture.jpg');
+	height: 35px;
+	margin-top: 15px;
+}
+
+/**
+ * Pickup design
+ */
+
+.pickup-area-bg {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+.pickup-area {
+	background-color: white;
+	position: fixed;
+}
+
+#pickup-backscreen {
+	position: absolute;
+}
+
+/**
+ * App design
+ */
+
+div.app {
+	border: #12303e solid 1px;
+	margin: 5px;
+	position: absolute;
+	overflow: hidden;
+}
+
+div.app_header {
+	background: #12303e;
+	height: 25px;
+}
+
+.app_header_title {
+	text-align: center;
+	width: 100%;
+	font-size: 18px;
+	color: #f1f1f1;
+	padding: 2px;
+}
+
+.app_header_pickup {
+	position: absolute;
+	width: 97%;
+	text-align: right;
+	padding: 5px;
+}
+
+.app_header_pickupbutton {
+	border: none;
+	color: #f1f1f1;
+	background: none;
+}
+
+.app_header_maximize {
+	position: absolute;
+	width: 99%;
+	text-align: right;
+	padding: 4px;
+}
+
+.app_header_maximizebutton {
+	border: none;
+	color: #f1f1f1;
+	background: none;
+}
+
+div.app_body {
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+}
+
+/**
+ * loading
+ * http://gimmicklog.main.jp/jquery/278/
+ */
+
+#loader-bg {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: #000;
+}
+#loader {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	text-align: center;
+	color: #fff;
+}
+
+/**
+ * loading image
+ * http://tobiasahlin.com/spinkit/
+ */
+
+.sk-folding-cube {
+	margin: 20px auto;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	-webkit-transform: rotateZ(45deg);
+					transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+	float: left;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	-webkit-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+					transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	-webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+					animation: sk-foldCubeAngle 2.4s infinite linear both;
+	-webkit-transform-origin: 100% 100%;
+			-ms-transform-origin: 100% 100%;
+					transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+	-webkit-transform: scale(1.1) rotateZ(90deg);
+					transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+	-webkit-transform: scale(1.1) rotateZ(180deg);
+					transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+	-webkit-transform: scale(1.1) rotateZ(270deg);
+					transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+	-webkit-animation-delay: 0.3s;
+					animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+	-webkit-animation-delay: 0.6s;
+					animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+	-webkit-animation-delay: 0.9s;
+					animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+	0%, 10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+						transform: perspective(140px) rotateX(-180deg);
+		opacity: 0;
+	} 25%, 75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+						transform: perspective(140px) rotateX(0deg);
+		opacity: 1;
+	} 90%, 100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+						transform: perspective(140px) rotateY(180deg);
+		opacity: 0;
+	}
+}
+
+@keyframes sk-foldCubeAngle {
+	0%, 10% {
+		-webkit-transform: perspective(140px) rotateX(-180deg);
+						transform: perspective(140px) rotateX(-180deg);
+		opacity: 0;
+	} 25%, 75% {
+		-webkit-transform: perspective(140px) rotateX(0deg);
+						transform: perspective(140px) rotateX(0deg);
+		opacity: 1;
+	} 90%, 100% {
+		-webkit-transform: perspective(140px) rotateY(180deg);
+						transform: perspective(140px) rotateY(180deg);
+		opacity: 0;
+	}
+}

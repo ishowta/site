@@ -1,10 +1,68 @@
 version: '2'
 services:
-  php:
-    container_name: "site-php"
-    build: ./bin/docker_containers/php
+  nginx:
+    image: danday74/nginx-lua
+    volumes:
+     - ./nginx.conf:/nginx/conf/nginx.conf
+    depends_on:
+     - omote
+     - ura
+     - server
+     - phpmyadmin
+     - memcached
+    ports:
+     - "27463:80" # RandomNumber
+  memcached:
+    image: memcached:1.4-alpine
+    mem_limit: 1g
+    command: memcached -m 1024m
+  mysql:
+    image: mysql:5.7.16
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: N06MzTSCDLXzegVY # RandomString
+      MYSQL_DATABASE: app
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 6ZLvcRS8hIlDdfAo # RandomString
+    volumes:
+      - db:/var/lib/mysql
+  omote:
+    build: ./docker/omote
     volumes:
       - ./apache2.conf:/etc/apache2/apache2.conf
-      - ./homepage:/var/www/html
-    ports:
-      - "25252:80" # RandomNumber
+      - ./omote:/var/www/html
+    depends_on:
+      - mysql
+  ura:
+    build: ./docker/ura
+    volumes:
+      - ./apache2.conf:/etc/apache2/apache2.conf
+      - ./ura:/var/www/html
+      - ./config:/var/www/html/config/config
+    depends_on:
+      - mysql
+      - memcached
+  server:
+    build: ./docker/server
+    volumes:
+      - ./server:/var/www/src
+    depends_on:
+      - mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+    volumes:
+     - /sessions
+    depends_on:
+      - mysql
+  init_script:
+    build: ./docker/init_script
+    depends_on:
+     - mysql
+     - nginx
+    volumes:
+     - ./init_script:/home/init_script
+     - ./config:/home/init_script/config
+volumes:
+  db:

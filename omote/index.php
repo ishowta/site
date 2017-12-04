@@ -1,3 +1,11 @@
+<?php
+// phpMyAdminから飛んできたら戻す
+if(isset($_COOKIE['pmaAuth-1'])){
+        header('Location: /phpMyAdmin/');
+        exit();
+}
+?>
+
 <html>
 <head>
 <meta charset="UTF-8">
