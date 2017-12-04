@@ -198,7 +198,7 @@ if(isset($_GET['pickup'])){
 		</div>
 		<div class="header">
 			<p class="header_title">
-				<a href="/">Lobby</a>
+				<a href="./">Lobby</a>
 				<button id="logout_button" onclick="location.href='logout.php'">logout</button>
 			</p>
 		</div>
