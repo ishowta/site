@@ -117,7 +117,7 @@ if(isset($_GET['pickup'])){
 		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<title>8oti</title>
+		<title>Lobby</title>
 		<script>
 			var _ua = (function(u){
 				return {
@@ -185,7 +185,7 @@ if(isset($_GET['pickup'])){
 			};
 		</script>
 	</head>
-	<body>
+	<body style="background-color: rgb(30,30,30);">
 		<div id="loader-bg" style="z-index: 100">
 			<div id="loader">
 				<div class="sk-folding-cube">
@@ -198,11 +198,11 @@ if(isset($_GET['pickup'])){
 		</div>
 		<div class="header">
 			<p class="header_title">
-				<a href="/">8oti</a>
+				<a href="/">Lobby</a>
 				<button id="logout_button" onclick="location.href='logout.php'">logout</button>
 			</p>
 		</div>
-		<a href="forkmeongithub.php"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 2;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+		<a href="forkmeongithub.php"><img style="width:100px; position: absolute; top: 0; left: 0; border: 0; z-index: 2;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
 		<div class="body">
 			<?php
 			for ($i=0; $i < count($app_list); $i++) {
@@ -327,7 +327,6 @@ if(isset($_GET['pickup'])){
 					$(this).css('height', ((app_list[app_cnt].height-1)*340+320)+'px');
 					$(this).find('.app_body').css('height', ((app_list[app_cnt].height-1)*340+320-25)+'px');
 				});
-
 				// アプリ分のbodyを確保
 				$('.shadow-body').css('width','100%');
 				$('.shadow-body').css('height',(appmap[0].length)*340);
@@ -347,7 +346,8 @@ if(isset($_GET['pickup'])){
 		// 名前、背景、Appの背景、Appのヘッダ
 		var color_set_list = [
 		['red-dark',	'#1d1d1d','#353535','#c74545'],
-		['blue-white',	'#1d1d1d','#ffffff','#45a3c7'],
+		['blue-white',	'#1d1d1d','#fff','#45a3c7'],
+		['wine-white',  '#1d1d1d','#fff','#a2303e'],
 		['simple',		'#ffffff','#ffffff','#12303e'],
 		['','#FEFAEC','#625772','#A9EEE6']
 		];

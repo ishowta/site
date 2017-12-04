@@ -22,7 +22,7 @@ div.header {
 }
 
 .header_title a {
-	font-size: 34px;
+	font-size: 27px;
 	color: #c1c1c1;
 	text-decoration: none;
 }
@@ -86,7 +86,7 @@ div.app {
 }
 
 div.app_header {
-	background: #12303e;
+	background: #a2303e;
 	height: 25px;
 }
 
