@@ -22,8 +22,11 @@ if(isset($_COOKIE['pmaAuth-1'])){
 <a href="mailto:ishowta@gmail.com">Mail</a><br>
 <br>
 <div class=app>
+作ったアプリ：
+<!--
 <img src="onlytweets.png"><br>
 <a target="_blank" href="http://ux.getuploader.com/ishowta/download/1/onlytweets.zip">ツイートのみのTwitterクライアント</a><br>
+-->
 </div>
 
 </body>

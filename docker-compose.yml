@@ -11,7 +11,7 @@ services:
      - phpmyadmin
      - memcached
     ports:
-     - "27463:80" # RandomNumber
+     - "25252:80" # RandomNumber
   memcached:
     image: memcached:1.4-alpine
     mem_limit: 1g
