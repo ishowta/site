@@ -1,6 +1,8 @@
 # My site (OLD)
 
-[**My site**](https://ishowta.club)
+## New site repository
+https://github.com/ishowta/iwata.love
+
 
 ## アプリの追加
 1. /php/apps/に追加したいアプリ名のフォルダを作成
